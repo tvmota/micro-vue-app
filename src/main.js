@@ -6,6 +6,7 @@ import singleSpaVue from 'single-spa-vue';
 import store from './store';
 
 Vue.config.productionTip = false;
+Vue.config.ignoredElements = [/wc-\w*/];
 
 const vueLifecycles = singleSpaVue({
   Vue,
@@ -20,4 +21,3 @@ const vueLifecycles = singleSpaVue({
 export const bootstrap = vueLifecycles.bootstrap;
 export const mount = vueLifecycles.mount;
 export const unmount = vueLifecycles.unmount;
-export const app1Store = store;

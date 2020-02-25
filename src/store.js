@@ -12,6 +12,7 @@ export default new Vuex.Store({
       },
       mutations: {
         SET_STORE_APP (state, payload) {
+          console.log(`state: ${JSON.stringify(state)}`, `payload: ${payload}`)
           state.storeApp1 = payload;
         },
       },
