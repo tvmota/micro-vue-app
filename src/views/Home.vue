@@ -6,8 +6,8 @@
       <h1>Web components(Vue wrapper)</h1>
       <wc-my-component msg="Vue web component wrapper"></wc-my-component>
       <wc-hello-world></wc-hello-world>
-      <wc-sc-input></wc-sc-input>
-      <wc-sc-select placeholder="select wc" @input="getSelectEvt($event)" v-model="selectedVal">
+      <wc-sc-input v-model="selectedVal"></wc-sc-input>
+      <wc-sc-select placeholder="select wc" @input="getSelectEvt($event)">
         <option value="flint">Flint</option>
         <option value="silver">Silver</option>
       </wc-sc-select>
@@ -48,6 +48,8 @@ export default {
   mounted() {
     this.updateStoreApp1();
     this.$store.dispatch('app2/updateStoreApp2');
+    console.log('Ls', localStorage.getItem('fromLogin'));
+    console.log('Ss', sessionStorage.getItem('fromLogin'));
   },
   components: {
     HelloWorld
